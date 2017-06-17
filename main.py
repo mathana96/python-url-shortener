@@ -64,12 +64,12 @@ def toBase10(num, b=62):
 def home():
     if request.method == 'POST':
         a = request.form.get('url')
-        original_url = str_encode(a)
-        if a[0:7] != 'http://':
+        # original_url = str_encode(a)
+        if a[0:8] != 'http://':
             b = 'http://' + a
             url = str_encode(b)
         else:
-            url = original_url
+            url = str_encode(a)
         # if urlparse(original_url).scheme == '':
             # url = 'http://' + original_url
         # else:
